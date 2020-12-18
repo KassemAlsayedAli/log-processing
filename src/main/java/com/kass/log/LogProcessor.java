@@ -20,8 +20,8 @@ import static com.kass.log.LogEntry.IP_INDEX;
 //
 
 /**
- * Handles the processing of a com.kass.log.log file as specified in the readme.txt file.
- * Note that this implementation assumes that there is one server and the size of the com.kass.log.log
+ * Handles the processing of a log file as specified in the readme.txt file.
+ * Note that this implementation assumes that there is one server and the size of the log
  * file is not the gigabytes, otherwise a different strategy is needed where the load
  * could be handled on a cluster of servers/machines...
  *
@@ -29,11 +29,11 @@ import static com.kass.log.LogEntry.IP_INDEX;
 public class LogProcessor {
 
     /**
-     * returns a list of com.kass.log.log entries that meet certain specs
+     * returns a list of log entries that meet certain specs
      *
-     * @param logL the com.kass.log.log entry list
+     * @param logL the log entry list
      * @param predicate specifies what entries to get
-     * @return list of com.kass.log.log entries
+     * @return list of log entries
      *
      * Time Complexity: O(n)
      * Space Complexity: O(n)
@@ -58,14 +58,14 @@ public class LogProcessor {
     }
 
     /**
-     * checks it the com.kass.log.log entries are evenly distributed among the machines (IP addresses).
+     * checks it the log entries are evenly distributed among the machines (IP addresses).
      * The assumption here is that the same service is running on multiple machines. This
      * method determines if the load is evenly distributed among those machines.
      *
      * If the distribution standard deviation is 0 then they are evenly distributed otherwise they
      * are not
      *
-     * @param logL list of com.kass.log.log entries
+     * @param logL list of log entries
      * @return true or false to indicate if the entries are evenly distributed among the IPs
      *
      * Time Complexity: O(n)

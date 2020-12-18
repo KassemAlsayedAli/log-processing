@@ -55,7 +55,7 @@ public class LogEntry {
                         entryArr[MSG_INDEX]);
             }
         } catch (ParseException e) {
-            // send to the com.kass.log.log
+            // send to the log
             e.printStackTrace();
         }
         return null;
@@ -121,7 +121,7 @@ public class LogEntry {
 
     @Override
     public String toString() {
-        return "com.kass.com.kass.log.log.LogEntry{" +
+        return "com.kass.log.LogEntry{" +
                 "timeStamp=" + timeStamp +
                 ", serviceName='" + serviceName + '\'' +
                 '}';
