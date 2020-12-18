@@ -1,0 +1,10 @@
+.idea/
+*.iml
+.project
+.settings
+.classpath
+.metadata
+out/
+.tomcatplugin
+.#webclasspath
+]*/test-output/
