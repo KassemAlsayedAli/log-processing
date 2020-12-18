@@ -80,6 +80,16 @@ public class LogProcessorTest {
     }
 
     @org.junit.Test
+    public void parseTest() {
+
+        String entry = "Jul 13 13:19:43.890###10.1.21.108###analytics-svc1###11-be456d81-2744-4cb3-b28b-bf2219dfcefe###Updating graph to include nodes related to payment 999";
+        assertEquals(false, LogEntry.parse(entry, (s) -> true).getMsg().contains("###"));
+
+        entry = "Jul 13 13:19:43.890###10.1.21.108###analytics-svc1###11-be456d81-2744-4cb3-b28b-bf2219dfcefe###Updating graph to include nodes ### related to payment ### 999";
+        assertEquals(true, LogEntry.parse(entry, (s) -> true).getMsg().contains("###"));
+    }
+
+    @org.junit.Test
     public void getStgDevTest() {
         Double[] v = {1d, 2d, 3d, 4d, 5d};
         Double[] v1 = {1d, 2d, 3d, 10d, 100d};

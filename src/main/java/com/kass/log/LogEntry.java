@@ -1,5 +1,7 @@
 package com.kass.log;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -44,7 +46,7 @@ public class LogEntry {
      * @return LogEntry
      */
     public static LogEntry parse(String entry, final Predicate<String> predicate){
-        String[] entryArr = entry.split(ENTRY_SPLITTER);
+        String[] entryArr = StringUtils.split(entry, ENTRY_SPLITTER, 5);
         try {
             if (predicate.test(entryArr[CORR_INDEX])) {
                 return new LogEntry(simpleDateFormat.parse(
